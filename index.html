@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href=".//favicon.ico">
+
+    <!-- Modules -->
+
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="survices.js"></script>
+    <script src="router.js" defer></script>
+    <script src="app.js" defer></script>
+    <!-- Scripts -->
+</head>
+
+<body>
+
+    <!-- Notifications -->
+    <div>
+        <div class="notification loadingBox">
+            Loading …
+        </div>
+        <div class="notification infoBox" id="info-notification">
+            Info
+        </div>
+        <div class="notification errorBox" id="error-notification">
+            Error: destination name can't be empty!
+        </div>
+    </div>
+    <div id="container"></div>
+
+
+    <footer>@SoftUni Destinations 2020</footer>
+
+
+
+    <script type="text/x-handlebars-template" id="home-template">
+    {{> header-template}}
+    {{#if isAuth}}
+    <section id="viewCatalog" class="background-img">
+        <div class="added-destinations">
+       
+        {{#each destinations}}
+        {{> destination-template}}
+        {{/each}}
+        {{else }}
+    </div>
+        <div class="guest">
+    No destinations possible! Please sign in...
+    </div>
+        {{/if}}
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="login-template">
+    {{> header-template}}
+    <section id="viewLogin">
+        <h2>Login to your account:</h2>
+        <form id="formLogin">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your Email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password">
+            <input type="submit" class="login" value="Login" onclick="onLoginSubmit(event)">
+        </form>
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="register-template">
+    {{> header-template}}
+    <section id="viewRegister">
+        <h2>Create your account:</h2>
+        <form id="formRegister">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <label for="rePassword">Repeat Password:</label>
+            <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
+            <input type="submit" class="register" value="Register" onclick="onRegSubmit(event)">
+        </form>
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="header-template">
+    <nav>
+        <div class="left-container">
+            <ul>
+                <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
+                {{#if isAuth}}
+                <li><a href="/destinations" onclick="navigateHandler(event)">Destinations</a></li>
+                <li><a href="/create" onclick="navigateHandler(event)">Add +</a></li>
+                {{else}}
+                <li><a href="/login"  onclick="navigateHandler(event)">Login</a></li>
+                <li><a href="/register"  onclick="navigateHandler(event)">Register</a></li>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="right-container">
+            {{#if isAuth}}
+            <span>Welcome, {{email}} |</span>
+            <a href="/logout" onclick="navigateHandler(event)" class="log-out">Logout</a>
+            {{/if}}
+        </div>
+    </nav>
+</script>
+
+    <script type="text/x-handlebars-template" id="create-template">
+    {{> header-template}}
+    <section id="viewAdddestination">
+        <h2>Add new destination</h2>
+        <form id="formAdddestination">
+            <label for="destination">Destination name:</label>
+            <input type="text" id="destination" name="destination" placeholder="Destination name">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City">
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" placeholder="Duration">
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate">
+            <label for="imgUrl">Image:</label>
+            <input type="text" id="imgUrl" name="imgUrl" placeholder="https://">
+
+            <input type="submit" class="create" value="Add" onclick="onAddDestSubmit(event)">
+        </form>
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="details-template">
+        {{>header-template}}
+    <section id="viewdestinationDetails">
+        <div class="destination-area">
+            <div class="destination-area-left">
+                <img src="{{imgUrl}}"
+                    alt="">
+            </div>
+            <div class="destination-area-right">
+                <h3>{{destination}}</h3>
+                <div>to {{city}}</div>
+                <div class="data-and-time">
+                    {{departureDate}}
+                    {{#if isChanged}}
+                    {{else}}
+                    <a onclick="editOneFunc(event)" class="edit-destination-detail"></a>
+                    {{/if}}
+                </div>
+                <div>
+                    {{duration}} days
+                </div>
+            </div>
+        </div>
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="my-destinations-template">
+        {{> header-template}}
+    <section id="viewMydestinations">
+        <h3>Your destinations</h3>
+        
+
+        {{#each destinations}}
+        {{> my-dest-template}}
+        {{/each}}
+      
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="edit-template">
+{{> header-template}}
+    <section id="viewEditdestination">
+        <h2>Edit existing destination</h2>
+        <form id="formAdddestination">
+            <label for="destination">Destination name:</label>
+            <input type="text" id="destination" name="destination" value="">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="">
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" value="">
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate" value="">
+            <label for="imgUrl">Image:</label>
+            <input type="text" id="imgUrl" name="imgUrl"
+                value="">
+
+            <input type="submit" class="create" value="Edit" id="edit-btn">
+        </form>
+    </section>
+</script>
+
+    <script type="text/x-handlebars-template" id="destination-template">
+    <a href="/details/{{key}}" class="added-destination" onclick="navigateHandler(event)">
+        <img src="{{imgUrl}}"
+            alt="" class="picture-added-destination">
+        <h3>{{destination}}</h3>
+        <span>to {{city}} </span><span>{{departureDate}}</span>
+    </a>
+</script>
+
+    <script type="text/x-handlebars-template" id="my-dest-template">
+    <div class="destination-ticket">
+
+        <div class="destination-left">
+            <img src="{{imgUrl}}"
+                alt="">
+        </div>
+
+        <div class="destination-right">
+
+            <div>
+                <h3>{{destination}}</h3><span>{{departureDate}}</span>
+            </div>
+
+            <div>
+                to {{city}}
+            </div>
+
+            <p>{{duration}} days </p>
+            <a href="/delete/{{key}}" onclick="deleteOneFunc(event)" class="remove">REMOVE</a>
+            <a href="/details/{{key}}" onclick="navigateHandler(event)" class="details">Details</a>
+        </div>
+</div>
+    </script>
+</body>
+
+</html>
