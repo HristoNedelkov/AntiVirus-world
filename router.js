@@ -19,7 +19,7 @@ const router = async (fullPath) => {
   switch (
     path //Here are some functionality
   ) {
-    case "home":
+    case "gallery":
       await itemSurvices.getAll().then((res) => {
         if (Object.keys(res).length != 0) {
           templateData.destinations = res;

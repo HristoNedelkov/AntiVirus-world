@@ -218,6 +218,11 @@
       <!-- GALLERY TEMPLATE - TO DOOO! -->
       {{>header-template}}
       <h1>GALLERY</h1>
+      <div class="added-destinations">
+      {{#each destinations}}
+        {{> destination-template}}
+        {{/each}}
+      </div>
     </script>
 
     <script type="text/x-handlebars-template" id="my-dest-template">
