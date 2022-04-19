@@ -25,55 +25,59 @@
       </div>
     </div>
     <div id="container"></div>
-    <footer>Dimitur Duev diploma project 2022</footer>
+  
     <script type="text/x-handlebars-template" id="header-template">
-        <nav>
-          <div class="left-container">
-            <ul>
-                {{#if isAuth}}
-                <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
-                <li><a href="/destinations" onclick="navigateHandler(event)">Destinations</a></li>
-                <li><a href="/create" onclick="navigateHandler(event)">Add +</a></li>
-                <li><a href="/about-us" onclick="navigateHandler(event)">About us</a></li>
-              {{else}}
-                <li><a
-                    href="/login"
-                    onclick="navigateHandler(event)"
-                  >Login</a></li>
-                <li><a
-                    href="/register"
-                    onclick="navigateHandler(event)"
-                  >Register</a></li>
-              {{/if}}
-            </ul>
-          </div>
-          <div class="right-container">
+      <nav>
+        <div class="left-container">
+          <ul>
             {{#if isAuth}}
-              <span>Welcome, {{email}} |</span>
-              <a
-                href="/logout"
-                onclick="navigateHandler(event)"
-                class="log-out"
-              >Logout</a>
+              <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
+              <li><a
+                  href="/destinations"
+                  onclick="navigateHandler(event)"
+                >Destinations</a></li>
+              <li><a href="/create" onclick="navigateHandler(event)">Add +</a></li>
+              <li><a href="/about-us" onclick="navigateHandler(event)">About us</a></li>
+            {{else}}
+              <li><a
+                  href="/login"
+                  onclick="navigateHandler(event)"
+                >Login</a></li>
+              <li><a
+                  href="/register"
+                  onclick="navigateHandler(event)"
+                >Register</a></li>
             {{/if}}
-          </div>
-        </nav>
-      </script>
-    <script type="text/x-handlebars-template" id="home-template">
-      {{> header-template}}
-      {{#if isAuth}}
-      <section id="viewCatalog" class="background-img">
-          <div class="added-destinations">
-
-          {{#each destinations}}
-          {{> destination-template}}
-          {{/each}}
-          {{else }}
-      </div>
-          <!-- <div class="guest"></div> -->
-          <img src="./static/img/download.png"  class="guest" alt="">
+          </ul>
+        </div>
+        <div class="right-container">
+          {{#if isAuth}}
+            <span>Welcome, {{email}} |</span>
+            <a
+              href="/logout"
+              onclick="navigateHandler(event)"
+              class="log-out"
+            >Logout</a>
           {{/if}}
-      </section>
+        </div>
+      </nav>
+    </script>
+    <script type="text/x-handlebars-template" id="home-template">
+        {{> header-template}}
+        <div id="home-page">
+            {{#if isAuth}}
+            <h1 id="title-home">AntiVirus World </h1>
+            <i class="fa-thin fa-camera-cctv"></i>
+
+            <section id="viewCatalog" class="background-img"></section>
+            <div class="intro-text">
+                <p> Днес човек е в състояние да изпраща и получава всякаква форма на данни, може да бъде електронна поща или аудио, или видео само с едно натискане на бутон, но дали някога е мислил колко сигурно се предават или изпращат данните му на друго лице безопасно, без изтичане на информация? Отговорът се крие в киберсигурността. Днес интернет е най-бързо развиващата се инфраструктура в ежедневието. В днешната техническа среда много от най-новите технологии променят облика на човека. Но поради тези нововъзникващи технологии ние не сме в състояние да защитим личната си информация по много ефективен начин и затова в наши дни киберпрестъпленията се увеличават с всеки изминал ден. Днес повече от 60 % от всички търговски сделки се извършват онлайн, така че тази област изисква високо качество на сигурността за прозрачни и най-добри сделки. Затова киберсигурността се превърна в актуален въпрос. Обхватът на киберсигурността не се ограничава само до защита на информацията в ИТ индустрията, но и до различни други области като киберпространството и т.н. </p>
+            </div>
+        {{else}}
+        <img src="./static/img/download.png"  class="guest" alt="">
+        {{/if}}
+      </div>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="login-template">
@@ -88,10 +92,36 @@
               <input type="submit" class="login" value="Login" onclick="onLoginSubmit(event)">
           </form>
       </section>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
-    
+
     <script type="text/x-handlebars-template" id="about-us-template">
         <!-- CREATE ABOUT US PAGE -->
+        {{>header-template}}
+        <div class="about-us-page">
+
+            <div class="about-section">
+                <h1>About Us Page</h1>
+                <p>Some text about who we are and what we do.</p>
+                <p>Resize the browser window to see that this page is responsive by the way.</p>
+              </div>
+
+
+                <div class="column">
+
+
+                        <img src="https://assets.weforum.org/article/image/XaHpf_z51huQS_JPHs-jkPhBp0dLlxFJwt-sPLpGJB0.jpg" alt="John" style="width: 100%; height: 100%;">
+                        <div class="container">
+                            <h2>Димитър Дуев</h2>
+                            <p class="title">Икономист-информатик </p>
+                            <p>Завършва: ЗПГ "Климент Тимирязев"</p>
+                            <p>имейл:mitko@abv.bg</p>
+                            <p><button class="button">Contact</button></p>
+                          </div>
+
+              </div>
+          </div>
+      </div>
     </script>
 
     <script type="text/x-handlebars-template" id="register-template">
@@ -108,9 +138,8 @@
               <input type="submit" class="register" value="Register" onclick="onRegSubmit(event)">
           </form>
       </section>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
-
-    
 
     <script type="text/x-handlebars-template" id="create-template">
       {{> header-template}}
@@ -131,6 +160,7 @@
               <input type="submit" class="create" value="Add" onclick="onAddDestSubmit(event)">
           </form>
       </section>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="details-template">
@@ -157,6 +187,7 @@
               </div>
           </div>
       </section>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="my-destinations-template">
@@ -170,6 +201,7 @@
           {{/each}}
 
       </section>
+      <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="edit-template">
@@ -192,6 +224,7 @@
                   <input type="submit" class="create" value="Edit" id="edit-btn">
               </form>
           </section>
+          <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="destination-template">
@@ -237,6 +270,7 @@
           >Details</a>
         </div>
       </div>
+     
     </script>
   </body>
 </html>
