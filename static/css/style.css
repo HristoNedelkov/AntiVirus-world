@@ -462,6 +462,9 @@ h3 {
     color: white;
   }
   
+  .about-us-page .container  {
+display: inline-block;
+  }
   .about-us-page .container {
     padding: 0 16px;
   }
@@ -486,8 +489,15 @@ h3 {
     text-align: center;
     cursor: pointer;
     width: 100%;
+    font-size: 22px;
   }
-  
+  #about-par {
+    color: white;
+    padding: 30px;
+    margin: 4% auto;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 20px;
+  }
   .about-us-page .button:hover {
     background-color: #555;
   }

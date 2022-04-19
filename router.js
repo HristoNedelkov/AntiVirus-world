@@ -5,8 +5,9 @@ const routes = {
   create: "create-template",
   details: "details-template",
   edit: "edit-template",
-  destinations: "my-destinations-template",
+  catalog: "catalog-template",
   "about-us": "about-us-template",
+  gallery: "gallery-template",
 };
 
 const router = async (fullPath) => {
@@ -25,7 +26,7 @@ const router = async (fullPath) => {
         }
       });
       break;
-    case "destinations":
+    case "catalog":
       await itemSurvices.getAll().then((res) => {
         if (Object.keys(res).length != 0) {
           console.log(res);

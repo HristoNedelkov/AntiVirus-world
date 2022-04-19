@@ -2,6 +2,8 @@ function addEventListeners() {
   partialTemplate("header-template");
   partialTemplate("destination-template");
   partialTemplate("my-dest-template");
+  partialTemplate("gallery-template");
+  partialTemplate("catalog-template");
   // partialTemplate('')
   //  partialTemplate('edit-offer-template')
   navigate("home");
