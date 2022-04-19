@@ -1,5 +1,5 @@
-let apiKey = 'AIzaSyC-6djatfIZX2H5euWMnZDzEdJofh-4srI'
-const dataBaseUrl = 'https://exam-e0a79-default-rtdb.firebaseio.com/'
+let apiKey = 'AIzaSyB6lPWWUtBuDegVAfukh-zcgxNwxUdnmig'
+const dataBaseUrl = 'https://destinations-71237-default-rtdb.firebaseio.com/'
 
 const authServices = {
     async login(email, password) {

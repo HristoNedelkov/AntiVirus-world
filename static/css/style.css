@@ -113,13 +113,10 @@ footer {
 }
 
 .guest {
-    text-align: center;
-    color: white;
-    background-color: cornflowerblue;
-    padding: 40px;
-    position: absolute;
-    top: 40%;
-    left: 40%;
+    display: block;
+    width: 30%;   
+    height: 30%;
+    margin: 0 auto;
 }
 
 .destination-parameters {
