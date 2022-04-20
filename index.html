@@ -21,7 +21,7 @@
       <div class="notification loadingBox">Loading …</div>
       <div class="notification infoBox" id="info-notification">Info</div>
       <div class="notification errorBox" id="error-notification">
-        Error: destination name can't be empty!
+        Error: Добави име на обявата!
       </div>
     </div>
     <div id="container"></div>
@@ -35,34 +35,34 @@
               <li><a
                   href="/catalog"
                   onclick="navigateHandler(event)"
-                >Catalog</a></li>
+                >Каталог</a></li>
               <li><a href="/create" onclick="navigateHandler(event)">Add
                   AntiVirus</a></li>
               <li><a
                   href="/gallery"
                   onclick="navigateHandler(event)"
-                >Gallery</a></li>
+                >Галерия</a></li>
               <li><a href="/about-us" onclick="navigateHandler(event)">About us</a></li>
             {{else}}
               <li><a
                   href="/login"
                   onclick="navigateHandler(event)"
-                >Login</a></li>
+                >Вход</a></li>
               <li><a
                   href="/register"
                   onclick="navigateHandler(event)"
-                >Register</a></li>
+                >Регистрация</a></li>
             {{/if}}
           </ul>
         </div>
         <div class="right-container">
           {{#if isAuth}}
-            <span>Welcome, {{email}} |</span>
+            <span>Добре дошъл, {{email}} |</span>
             <a
               href="/logout"
               onclick="navigateHandler(event)"
               class="log-out"
-            >Logout</a>
+            >Излез</a>
           {{/if}}
         </div>
       </nav>
@@ -88,7 +88,7 @@
     <script type="text/x-handlebars-template" id="login-template">
       {{> header-template}}
       <section id="viewLogin">
-          <h2>Login to your account:</h2>
+          <h2>Влезте във вашият акаунт: </h2>
           <form id="formLogin">
               <label for="email">Email:</label>
               <input type="text" id="email" name="email" placeholder="Enter your Email">
@@ -101,7 +101,6 @@
     </script>
 
     <script type="text/x-handlebars-template" id="about-us-template">
-        <!-- CREATE ABOUT US PAGE -->
         {{>header-template}}
         <div class="about-us-page">
 
@@ -136,7 +135,7 @@
     <script type="text/x-handlebars-template" id="register-template">
       {{> header-template}}
       <section id="viewRegister">
-          <h2>Create your account:</h2>
+          <h2>Създай своя акаунт:</h2>
           <form id="formRegister">
               <label for="email">Email:</label>
               <input type="text" id="email" name="email" placeholder="Email">
@@ -153,16 +152,13 @@
     <script type="text/x-handlebars-template" id="create-template">
       {{> header-template}}
       <section id="viewAdddestination">
-          <h2>Add new destination</h2>
+          <h2>Добави антивирусен софтуер</h2>
           <form id="formAdddestination">
-              <label for="destination">Destination name:</label>
-              <input type="text" id="destination" name="destination" placeholder="Destination name">
-              <label for="city">City:</label>
-              <input type="text" id="city" name="city" placeholder="City">
-              <label for="duration">Duration:</label>
-              <input type="number" id="duration" name="duration" placeholder="Duration">
-              <label for="departureDate">Departure Date:</label>
-              <input type="date" id="departureDate" name="departureDate">
+              <label for="destination">Име на антивирусния софтуер:</label>
+              <input type="text" id="destination" name="destination" placeholder="Име ">
+              <label for="city">Описание:</label>
+              <input type="text" id="city" name="city" placeholder="Описание на софтуера">
+               
               <label for="imgUrl">Image:</label>
               <input type="text" id="imgUrl" name="imgUrl" placeholder="https://">
 

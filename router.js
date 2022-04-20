@@ -34,9 +34,9 @@ const router = async (fullPath) => {
           let currOwner = JSON.parse(localStorage.getItem("auth")).email;
 
           res.forEach((dest) => {
-            if (dest.owner == currOwner) {
+            
               arr.push(dest);
-            }
+           
           });
           templateData.destinations = arr;
         }
