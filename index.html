@@ -31,6 +31,11 @@
         <div class="left-container">
           <ul>
             {{#if isAuth}}
+              <li><img
+                  src="./static/img/logo-white.png"
+                  alt="logo"
+                  style="width: 100%;"
+                /></li>
               <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
               <li><a
                   href="/catalog"
@@ -214,35 +219,27 @@
       <!-- GALLERY TEMPLATE - TO DOOO! -->
       {{>header-template}}
       <header class="w3-center w3-margin-bottom">
-        <h1><b>Gallery</b></h1>
-        <p><b>A template to be used as a Gallery.</b></p>
+        <h1  style="width: 80%; padding: 20px;"><b>Различни видове софтуерни вируси</b></h1>
+        <p style="width: 80%; padding: 20px;";><b>В компютърния жаргон вирус е вредна компютърна програма, която се размножава прикрито, като се вмъква в друг изпълним код (програма) или документ. Това дава и името на този вид програми, тъй като подобно поведение е сходно с това на биологичен вирус, който се размножава, като се вмъква в живи клетки. По аналогия вмъкването на вирус в програма често се нарича „инфекция“. Вируси са само един от видовете злонамерени</b></p>
       </header>
-      </div>
+
 
       <!-- Photo Grid -->
       <div class="w3-row" id="myGrid" style="margin-bottom:128px">
-        <div class="w3-third">
-          <img src="./static/images/rocks.jpg" style="width:100%">
-          <img src="./static/images/sound.jpg" style="width:100%">
-          <img src="./static/images/woods.jpg" style="width:100%">
-          <img src="./static/images/rock.jpg" style="width:100%">
-          <img src="./static/images/nature.jpg" style="width:100%">
+
+        <div class="w3-third"  >
+          <img src="./static/img/virus-1.jpg" >
+        </div>
+
+        <div class="w3-third"  >
+          <img src="./static/img/virus-2.png"  >
+          <img src="./static/img/virus-3.jpg" >
+
         </div>
 
         <div class="w3-third">
-          <img src="./static/images/bridge.jpeg" style="width:100%">
-          <img src="./static/images/notebook.jpg" style="width:100%">
-          <img src="./static/images/london.jpg" style="width:100%">
-          <img src="./static/images/rocks.jpg" style="width:100%">
-          <img src="./static/images/avatar_g.jpg" style="width:100%">
-        </div>
-
-        <div class="w3-third">
-          <img src="./static/images/workbench.jpg" style="width:100%">
-          <img src="./static/images/gondol.jpg" style="width:100%">
-          <img src="./static/images/skies.jpg" style="width:100%">
-          <img src="./static/images/lights.jpg" style="width:100%">
-          <img src="./static/images/workshop.jpg" style="width:100%">
+          <img src="./static/img/virus-4.webp"  >
+          <img src="./static/img/virus-5.jpg" >
         </div>
       </div>
 

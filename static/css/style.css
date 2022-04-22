@@ -58,11 +58,11 @@ nav {
   color: white;
 }
 
-img {
+/* img {
   width: 35px;
   height: 35px;
   margin-top: 25px;
-}
+} */
 
 h2 {
   font-size: 50px;
@@ -291,9 +291,7 @@ footer {
   flex-basis: 25%;
 }
 
-.buttons-container {
-}
-
+ 
 .picture-added-destination {
   width: 200px;
   height: 150px;
@@ -659,3 +657,4 @@ h3 {
     width: 100%;
   }
 }
+ 
