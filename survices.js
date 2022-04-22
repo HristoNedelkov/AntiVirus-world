@@ -1,6 +1,4 @@
-let apiKey = 'AIzaSyB6lPWWUtBuDegVAfukh-zcgxNwxUdnmig'
-const dataBaseUrl = 'https://destinations-71237-default-rtdb.firebaseio.com/'
-
+ 
 const authServices = {
     async login(email, password) {
         let res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {

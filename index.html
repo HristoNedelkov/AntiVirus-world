@@ -12,7 +12,7 @@
     <script src="survices.js"></script>
     <script src="router.js" defer></script>
     <script src="app.js" defer></script>
-    <script src="./db-connection.js" type="module" defer></script>
+    <script src="./db-connection.js" defer></script>
     <!-- Scripts -->
   </head>
 
@@ -78,16 +78,16 @@
       </nav>
     </script>
     <script type="text/x-handlebars-template" id="home-template">
-        {{> header-template}}
-        <div id="home-page">
-            {{#if isAuth}}
-            <h1 id="title-home">AntiVirus World </h1>
-            <i class="fa-thin fa-camera-cctv"></i>
+      {{> header-template}}
+      <div id="home-page">
+        {{#if isAuth}}
+        <h1 id="title-home">AntiVirus World </h1>
+        <i class="fa-thin fa-camera-cctv"></i>
 
-            <section id="viewCatalog" class="background-img"></section>
-            <div class="intro-text">
-                <p> Днес човек е в състояние да изпраща и получава всякаква форма на данни, може да бъде електронна поща или аудио, или видео само с едно натискане на бутон, но дали някога е мислил колко сигурно се предават или изпращат данните му на друго лице безопасно, без изтичане на информация? Отговорът се крие в киберсигурността. Днес интернет е най-бързо развиващата се инфраструктура в ежедневието. В днешната техническа среда много от най-новите технологии променят облика на човека. Но поради тези нововъзникващи технологии ние не сме в състояние да защитим личната си информация по много ефективен начин и затова в наши дни киберпрестъпленията се увеличават с всеки изминал ден. Днес повече от 60 % от всички търговски сделки се извършват онлайн, така че тази област изисква високо качество на сигурността за прозрачни и най-добри сделки. Затова киберсигурността се превърна в актуален въпрос. Обхватът на киберсигурността не се ограничава само до защита на информацията в ИТ индустрията, но и до различни други области като киберпространството и т.н. </p>
-            </div>
+        <section id="viewCatalog" class="background-img"></section>
+        <div class="intro-text">
+          <p> Днес човек е в състояние да изпраща и получава всякаква форма на данни, може да бъде електронна поща или аудио, или видео само с едно натискане на бутон, но дали някога е мислил колко сигурно се предават или изпращат данните му на друго лице безопасно, без изтичане на информация? Отговорът се крие в киберсигурността. Днес интернет е най-бързо развиващата се инфраструктура в ежедневието. В днешната техническа среда много от най-новите технологии променят облика на човека. Но поради тези нововъзникващи технологии ние не сме в състояние да защитим личната си информация по много ефективен начин и затова в наши дни киберпрестъпленията се увеличават с всеки изминал ден. Днес повече от 60 % от всички търговски сделки се извършват онлайн, така че тази област изисква високо качество на сигурността за прозрачни и най-добри сделки. Затова киберсигурността се превърна в актуален въпрос. Обхватът на киберсигурността не се ограничава само до защита на информацията в ИТ индустрията, но и до различни други области като киберпространството и т.н. </p>
+        </div>
         {{else}}
         <img src="./static/img/download.png"  class="guest" alt="">
         {{/if}}
@@ -98,204 +98,205 @@
     <script type="text/x-handlebars-template" id="login-template">
       {{> header-template}}
       <section id="viewLogin">
-          <h2>Влезте във вашият акаунт: </h2>
-          <form id="formLogin">
-              <label for="email">Email:</label>
-              <input type="text" id="email" name="email" placeholder="Enter your Email">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" placeholder="Enter your Password">
-              <input type="submit" class="login" value="Login" onclick="onLoginSubmit(event)">
-          </form>
+        <h2>Влезте във вашият акаунт: </h2>
+        <form id="formLogin">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" placeholder="Enter your Email">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your Password">
+          <input type="submit" class="login" value="Login" onclick="onLoginSubmit(event)">
+        </form>
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
     </script>
 
     <script type="text/x-handlebars-template" id="about-us-template">
-        {{>header-template}}
-        <div class="about-us-page">
+      {{>header-template}}
+      <div class="about-us-page">
 
-            <div class="about-section">
-                <h1>About Us Page</h1>
-                <p>Some text about who we are and what we do.</p>
-                <p>Resize the browser window to see that this page is responsive by the way.</p>
-              </div>
+        <div class="about-section">
+          <h1>About Us Page</h1>
+          <p>Some text about who we are and what we do.</p>
+          <p>Resize the browser window to see that this page is responsive by the way.</p>
+        </div>
 
 
-                <div class="column">
-                        <img src="./static/img/avatar.jpg" alt="John" >
-                        <div class="container">
-                            <h2>Димитър Дуев</h2>
-                            <p class="title">Икономист-информатик </p>
-                            <p>Завършва: ЗПГ "Климент Тимирязев"</p>
-                            <p>имейл:mitko@abv.bg</p>
-                          </div>
+        <div class="column">
+          <img src="./static/img/avatar.jpg" alt="John" >
+          <div class="container">
+            <h2>Димитър Дуев</h2>
+                          <p class="title">Икономист-информатик </p>
+                          <p>Завършва: ЗПГ "Климент Тимирязев"</p>
+                          <p>имейл:mitko@abv.bg</p>
+                        </div>
 
-              </div>
-          </div>
+                      </div>
+                    </div>
 
-      </div>
-      <section class="comments-form">
-          <div class="card">
-              <h1>AntiVirus World</h1>
-              <p id="about-par">Компютърната сигурност е обширна тема, която придобива все по-голямо значение, тъй като светът става силно взаимосвързан, а мрежите се използват за извършване на важни транзакции. Киберпрестъпността продължава да се отклонява по различни пътища с всяка изминала нова година, както и сигурността на информацията. Най-новите и разрушителни технологии, заедно с новите кибернетични инструменти и заплахи, които излизат наяве всеки ден, поставят организациите пред предизвикателството не само как да защитят инфраструктурата си, но и как да изискват нови платформи и разузнаване за това. Няма перфектно решение за киберпрестъпленията, но трябва да се постараем на ниво да ги сведем до минимум, за да имаме сигурно и безопасно бъдеще в киберпространството.</p>
-          </div>
-      </section>
+                  </div>
+                  <section class="comments-form">
+                    <div class="card">
+                      <h1>AntiVirus World</h1>
+                      <p id="about-par">Компютърната сигурност е обширна тема, която придобива все по-голямо значение, тъй като светът става силно взаимосвързан, а мрежите се използват за извършване на важни транзакции. Киберпрестъпността продължава да се отклонява по различни пътища с всяка изминала нова година, както и сигурността на информацията. Най-новите и разрушителни технологии, заедно с новите кибернетични инструменти и заплахи, които излизат наяве всеки ден, поставят организациите пред предизвикателството не само как да защитят инфраструктурата си, но и как да изискват нови платформи и разузнаване за това. Няма перфектно решение за киберпрестъпленията, но трябва да се постараем на ниво да ги сведем до минимум, за да имаме сигурно и безопасно бъдеще в киберпространството.</p>
+                    </div>
+                  </section>
     </script>
 
     <script type="text/x-handlebars-template" id="register-template">
       {{> header-template}}
       <section id="viewRegister">
-          <h2>Създай своя акаунт:</h2>
-          <form id="formRegister">
-              <label for="email">Email:</label>
-              <input type="text" id="email" name="email" placeholder="Email">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" placeholder="Password">
-              <label for="rePassword">Repeat Password:</label>
-              <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
-              <input type="submit" class="register" value="Register" onclick="onRegSubmit(event)">
-          </form>
+        <h2>Създай своя акаунт:</h2>
+        <form id="formRegister">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" placeholder="Email">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+          <label for="rePassword">Repeat Password:</label>
+          <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
+          <input type="submit" class="register" value="Register" onclick="onRegSubmit(event)">
+        </form>
       </section>
       <footer>Dimitur Duev diploma project 2022</footer>
     </script>
 
     <script type="text/x-handlebars-template" id="contact-template">
-      {{>header-template}}
+                    {{>header-template}}
       <div class="login-root">
         <div
-          class="box-root flex-flex flex-direction--column"
-          style="min-height: 100vh; flex-grow: 1"
+        class="box-root flex-flex flex-direction--column"
+        style="min-height: 100vh; flex-grow: 1"
         >
-          <div class="loginbackground box-background--white padding-top--64">
-            <div class="loginbackground-gridContainer">
-              <div
-                class="box-root flex-flex"
-                style="grid-area: top / start / 8 / end"
-              >
-                <div
-                  class="box-root"
-                  style="
+        <div class="loginbackground box-background--white padding-top--64">
+          <div class="loginbackground-gridContainer">
+            <div
+            class="box-root flex-flex"
+            style="grid-area: top / start / 8 / end"
+            >
+            <div
+            class="box-root"
+            style="
                     background-image: linear-gradient(
                       white 0%,
                       rgb(247, 250, 252) 33%
-                    );
-                    flex-grow: 1;
-                  "
+                      );
+                      flex-grow: 1;
+                      "
                 ></div>
               </div>
               <div
-                class="box-root flex-flex"
-                style="grid-area: 4 / 2 / auto / 5"
+              class="box-root flex-flex"
+              style="grid-area: 4 / 2 / auto / 5"
               >
-                <div
-                  class="box-root box-divider--light-all-2 animationLeftRight tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
               <div
-                class="box-root flex-flex"
-                style="grid-area: 6 / start / auto / 2"
-              >
-                <div
-                  class="box-root box-background--blue800"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 7 / start / auto / 4"
-              >
-                <div
-                  class="box-root box-background--blue animationLeftRight"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 8 / 4 / auto / 6"
-              >
-                <div
-                  class="box-root box-background--gray100 animationLeftRight tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 2 / 15 / auto / end"
-              >
-                <div
-                  class="box-root box-background--cyan200 animationRightLeft tans4s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 3 / 14 / auto / end"
-              >
-                <div
-                  class="box-root box-background--blue animationRightLeft"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 4 / 17 / auto / 20"
-              >
-                <div
-                  class="box-root box-background--gray100 animationRightLeft tans4s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
-              <div
-                class="box-root flex-flex"
-                style="grid-area: 5 / 14 / auto / 17"
-              >
-                <div
-                  class="box-root box-divider--light-all-2 animationRightLeft tans3s"
-                  style="flex-grow: 1"
-                ></div>
-              </div>
+              class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+              style="flex-grow: 1"
+              ></div>
             </div>
-          </div>
-
-          <div
-            class="box-root padding-top--24 flex-flex flex-direction--column"
-            style="flex-grow: 1; z-index: 9"
-          >
             <div
-              class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+            class="box-root flex-flex"
+            style="grid-area: 6 / start / auto / 2"
             >
-              <h1>
-                <a href="http://blog.stackfindover.com/" rel="dofollow">Send us
-                  feedback</a>
-              </h1>
+            <div
+            class="box-root box-background--blue800"
+            style="flex-grow: 1"
+            ></div>
+              </div>
+              <div
+              class="box-root flex-flex"
+              style="grid-area: 7 / start / auto / 4"
+              >
+              <div
+              class="box-root box-background--blue animationLeftRight"
+              style="flex-grow: 1"
+              ></div>
             </div>
-            <div class="formbg-outer">
-              <div class="formbg">
-                <div class="formbg-inner padding-horizontal--48">
-                  <span class="padding-bottom--15">Моля попълнете всички полета</span>
+            <div
+            class="box-root flex-flex"
+            style="grid-area: 8 / 4 / auto / 6"
+            >
+            <div
+            class="box-root box-background--gray100 animationLeftRight tans3s"
+            style="flex-grow: 1"
+            ></div>
+          </div>
+          <div
+          class="box-root flex-flex"
+          style="grid-area: 2 / 15 / auto / end"
+          >
+          <div
+          class="box-root box-background--cyan200 animationRightLeft tans4s"
+          style="flex-grow: 1"
+          ></div>
+        </div>
+        <div
+        class="box-root flex-flex"
+        style="grid-area: 3 / 14 / auto / end"
+        >
+                <div
+                class="box-root box-background--blue animationRightLeft"
+                style="flex-grow: 1"
+                ></div>
+              </div>
+              <div
+              class="box-root flex-flex"
+              style="grid-area: 4 / 17 / auto / 20"
+              >
+              <div
+              class="box-root box-background--gray100 animationRightLeft tans4s"
+              style="flex-grow: 1"
+              ></div>
+            </div>
+            <div
+            class="box-root flex-flex"
+            style="grid-area: 5 / 14 / auto / 17"
+            >
+            <div
+            class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+            style="flex-grow: 1"
+            ></div>
+          </div>
+        </div>
+      </div>
 
-                  <form id="stripe-login">
-                    <div class="field padding-bottom--24">
-                      <label for="name">Name</label>
-                      <input type="text" name="name" />
-                    </div>
-                    <div class="field padding-bottom--24">
-                      <div class="grid--50-50">
-                        <label for="comment">Message</label>
-                      </div>
-                      <input type="text" name="comment" />
-                    </div>
+      <div
+      class="box-root padding-top--24 flex-flex flex-direction--column"
+      style="flex-grow: 1; z-index: 9"
+      >
+      <div
+      class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+      >
+      <h1>
+        <a href="http://blog.stackfindover.com/" rel="dofollow">Send us
+          feedback</a>
+        </h1>
+      </div>
+      <div class="formbg-outer">
+        <div class="formbg">
+          <div class="formbg-inner padding-horizontal--48">
+            <span class="padding-bottom--15">Моля попълнете всички полета</span>
 
-                    <div class="field padding-bottom--24">
-                      <input type="submit" name="submit" value="Post" />
-                    </div>
-                  </form>
-                  <div class="field padding-bottom--24">
-                    <label for="comment">Commentar ime</label>
-                    <input type="text" name="comment" />
-                  </div>
+            <form id="stripe-login" onsubmit="return false" >
+              <div class="field padding-bottom--24">
+                <label for="name">Name</label>
+                <input id="comments-name" type="text" name="name" />
+              </div>
+              <div class="field padding-bottom--24">
+                <div class="grid--50-50">
+                  <label for="comment">Message</label>
                 </div>
+                <input id="comments-text" type="text" name="comment" />
+              </div>
+
+              <div class="field padding-bottom--24" onclick="onPostComment()" >
+                <input  type="submit"  name="submit" value="Post" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="comments-section">
+                <!--  THE PLACE FOR THE COMMENTS -->
+                 
+
               </div>
             </div>
           </div>
@@ -305,47 +306,47 @@
     <script type="text/x-handlebars-template" id="create-template">
       {{> header-template}}
       <section id="viewAdddestination">
-          <h2>Добави антивирусен софтуер</h2>
-          <form id="formAdddestination">
-              <label for="destination">Име на антивирусния софтуер:</label>
-              <input type="text" id="destination" name="destination" placeholder="Име ">
-              <label for="city">Описание:</label>
-              <input type="text" id="city" name="city" placeholder="Описание на софтуера">
+        <h2>Добави антивирусен софтуер</h2>
+        <form id="formAdddestination">
+          <label for="destination">Име на антивирусния софтуер:</label>
+          <input type="text" id="destination" name="destination" placeholder="Име ">
+          <label for="city">Описание:</label>
+          <input type="text" id="city" name="city" placeholder="Описание на софтуера">
 
-              <label for="imgUrl">Image:</label>
-              <input type="text" id="imgUrl" name="imgUrl" placeholder="https://">
+          <label for="imgUrl">Image:</label>
+          <input type="text" id="imgUrl" name="imgUrl" placeholder="https://">
 
-              <input type="submit" class="create" value="Add" onclick="onAddDestSubmit(event)">
-          </form>
+          <input type="submit" class="create" value="Add" onclick="onAddDestSubmit(event)">
+        </form>
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
     </script>
 
     <script type="text/x-handlebars-template" id="details-template">
-          {{>header-template}}
+      {{>header-template}}
       <section id="viewdestinationDetails">
-          <div class="destination-area">
-              <div class="destination-area-left">
-                  <img src="{{imgUrl}}"
-                      alt="">
-              </div>
-              <div class="destination-area-right">
-                  <h3>{{destination}}</h3>
-                  <div> {{city}}</div>
-
-              </div>
+        <div class="destination-area">
+          <div class="destination-area-left">
+            <img src="{{imgUrl}}"
+            alt="">
           </div>
+          <div class="destination-area-right">
+            <h3>{{destination}}</h3>
+            <div> {{city}}</div>
+
+          </div>
+        </div>
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
     </script>
 
     <script type="text/x-handlebars-template" id="catalog-template">
-          {{> header-template}}
+      {{> header-template}}
       <section id="viewMydestinations">
-          <h3>Your antivirus softwares</h3>
-          {{#each destinations}}
-          {{> my-dest-template}}
-          {{/each}}
+        <h3>Your antivirus softwares</h3>
+        {{#each destinations}}
+        {{> my-dest-template}}
+        {{/each}}
 
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
@@ -364,34 +365,34 @@
     </script>
 
     <script type="text/x-handlebars-template" id="gallery-template">
-      <!-- GALLERY TEMPLATE - TO DOOO! -->
-      {{>header-template}}
-      <header class="w3-center w3-margin-bottom">
-        <h1  style="width: 80%; padding: 20px;"><b>Различни видове софтуерни вируси</b></h1>
-        <p style="width: 80%; padding: 20px;";><b>В компютърния жаргон вирус е вредна компютърна програма, която се размножава прикрито, като се вмъква в друг изпълним код (програма) или документ. Това дава и името на този вид програми, тъй като подобно поведение е сходно с това на биологичен вирус, който се размножава, като се вмъква в живи клетки. По аналогия вмъкването на вирус в програма често се нарича „инфекция“. Вируси са само един от видовете злонамерени</b></p>
-      </header>
+        <!-- GALLERY TEMPLATE - TO DOOO! -->
+        {{>header-template}}
+        <header class="w3-center w3-margin-bottom">
+          <h1  style="width: 80%; padding: 20px;"><b>Различни видове софтуерни вируси</b></h1>
+          <p style="width: 80%; padding: 20px;";><b>В компютърния жаргон вирус е вредна компютърна програма, която се размножава прикрито, като се вмъква в друг изпълним код (програма) или документ. Това дава и името на този вид програми, тъй като подобно поведение е сходно с това на биологичен вирус, който се размножава, като се вмъква в живи клетки. По аналогия вмъкването на вирус в програма често се нарича „инфекция“. Вируси са само един от видовете злонамерени</b></p>
+        </header>
 
 
-      <!-- Photo Grid -->
-      <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+        <!-- Photo Grid -->
+        <div class="w3-row" id="myGrid" style="margin-bottom:128px">
 
-        <div class="w3-third"  >
-          <img src="./static/img/virus-1.jpg" >
+          <div class="w3-third"  >
+            <img src="./static/img/virus-1.jpg" >
+          </div>
+
+          <div class="w3-third"  >
+            <img src="./static/img/virus-2.png"  >
+            <img src="./static/img/virus-3.jpg" >
+
+          </div>
+
+          <div class="w3-third">
+            <img src="./static/img/virus-4.webp"  >
+            <img src="./static/img/virus-5.jpg" >
+          </div>
         </div>
 
-        <div class="w3-third"  >
-          <img src="./static/img/virus-2.png"  >
-          <img src="./static/img/virus-3.jpg" >
-
-        </div>
-
-        <div class="w3-third">
-          <img src="./static/img/virus-4.webp"  >
-          <img src="./static/img/virus-5.jpg" >
-        </div>
-      </div>
-
-      <!-- End Page Content -->
+        <!-- End Page Content -->
       </div>
     </script>
 

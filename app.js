@@ -107,6 +107,16 @@ function onAddDestSubmit(event) {
   }
 }
 
+function onPostComment() {
+  const name = document.getElementById("comments-name").value;
+  const text = document.getElementById("comments-text").value;
+  if (name != "" && text != "") {
+    commentServices.add({ name, text });
+    alert("Успешно публикуван коментар!");
+    navigate("contact");
+  } else alert("Попълнете всички полета!");
+}
+
 const navigate = (path) => {
   //Here we change the address and shhow the html with  ROUTER()
   history.pushState({}, "", path);

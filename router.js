@@ -1,3 +1,4 @@
+
 const routes = {
   home: "home-template",
   login: "login-template",
@@ -55,6 +56,30 @@ const router = async (fullPath) => {
         Object.assign(templateData, { isChanged: true });
       }
       Object.assign(templateData, destDetails);
+      break;
+    case "contact":
+       
+      const divGenerate = (obj) => {
+        return `
+        <div class="field comment-card" >
+        <label for="comment">| Автор: ${obj.name} |</label>
+        <p>${obj.text}</p>
+        </div>`;
+      };
+      let allData = commentServices
+      .getAll()
+      .then((res) => {
+        if (Object.keys(res).length != 0) return res;
+        else return {};
+      })
+      .then((data) => {
+          let commentsDiv = document.getElementById("comments-section");
+          
+          for (const el of Object.entries(data)) {
+            console.log(divGenerate(el[1]));
+            commentsDiv.innerHTML += divGenerate(el[1]);
+          }
+        });
       break;
 
     default:
