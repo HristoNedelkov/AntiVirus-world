@@ -4,6 +4,8 @@ function addEventListeners() {
   partialTemplate("my-dest-template");
   partialTemplate("gallery-template");
   partialTemplate("catalog-template");
+  partialTemplate("contact-template");
+
   // partialTemplate('')
   //  partialTemplate('edit-offer-template')
   navigate("home");

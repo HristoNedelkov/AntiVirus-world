@@ -8,6 +8,7 @@ const routes = {
   catalog: "catalog-template",
   "about-us": "about-us-template",
   gallery: "gallery-template",
+  contact: "contact-template",
 };
 
 const router = async (fullPath) => {
@@ -34,9 +35,7 @@ const router = async (fullPath) => {
           let currOwner = JSON.parse(localStorage.getItem("auth")).email;
 
           res.forEach((dest) => {
-            
-              arr.push(dest);
-           
+            arr.push(dest);
           });
           templateData.destinations = arr;
         }
