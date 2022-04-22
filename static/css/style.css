@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Amaranth|Courgette");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu+Mono:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu+Mono:ital@0;1&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -114,10 +114,8 @@ footer {
   width: 100%;
 }
 #home-page {
-    background: url("../../static/img/home-page.jpg") no-repeat  ;
-    background-size: cover;
-    
-
+  background: url("../../static/img/home-page.jpg") no-repeat;
+  background-size: cover;
 }
 
 .background-img {
@@ -138,20 +136,20 @@ footer {
   margin-left: 40px;
 }
 .intro-text p {
-    color: white;
+  color: white;
   padding: 30px;
   margin: 4% auto;
   font-family: "Ubuntu Mono", monospace;
   font-size: 20px;
 }
 #title-home {
-    color: white;
+  color: white;
   text-align: center;
   padding: 50px;
   margin: 0 auto;
   font-size: 62px;
-  font-family: 'Permanent Marker', cursive;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Permanent Marker", cursive;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 .guest {
@@ -439,221 +437,225 @@ h3 {
 }
 
 .about-us-page {
-    height: 100%;
-    display: block;
-    margin: 10px;
+  height: 100%;
+  display: block;
+  margin: 10px;
+}
+.about-us-page .column img {
+  width: 100%;
+  height: 70%;
 }
 .about-us-page .column {
-    float: left;
-    width: 20%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  .about-us-page .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
-  
-  .about-us-page .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-  
-  .about-us-page .container  {
-display: inline-block;
-  }
-  .about-us-page .container {
-    padding: 0 16px;
-  }
-  
-  .about-us-page .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .about-us-page .title {
-    color: grey;
-  }
-  
-  .about-us-page .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+  float: left;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.about-us-page .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-us-page .about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.about-us-page .container {
+  display: inline-block;
+}
+.about-us-page .container {
+  padding: 0 16px;
+}
+
+.about-us-page .container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.about-us-page .title {
+  color: grey;
+}
+
+.about-us-page .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 22px;
+}
+#about-par {
+  color: white;
+  padding: 30px;
+  margin: 4% auto;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 20px;
+}
+.about-us-page .button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .about-us-page .column {
     width: 100%;
-    font-size: 22px;
+    display: block;
   }
-  #about-par {
-    color: white;
-    padding: 30px;
-    margin: 4% auto;
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 20px;
-  }
-  .about-us-page .button:hover {
-    background-color: #555;
-  }
-  
-  @media screen and (max-width: 650px) {
-    .about-us-page .column {
-      width: 100%;
-      display: block;
-    }
+}
+
+/* COMMENT FORM  */
+.commentsBox {
+  width: 70%;
+  border-radius: 25px;
+  background: #c1c2c7;
+  margin: 20px;
+}
+.commentsBox h2 {
+  padding-left: 0;
+  font-family: "Courier New", Courier, monospace;
+  float: inline-end;
+  font-size: 26px;
+  color: rgb(71, 71, 71);
+}
+.commentsBox p {
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  color: rgb(0, 0, 0);
+}
+.comments-form {
+  overflow: hidden;
+  border-radius: 25px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #6495ed;
+  font-family: "Balsamiq Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 70%;
+  padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  position: relative;
+}
+
+.card h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.card .row {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid: auto / auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-gap: 20px;
+}
+
+.card .row .col {
+  position: relative;
+  width: 100%;
+  margin: 30px 10px 40px 0;
+  transition: 0.5s;
+}
+
+.card .row .form-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
+
+.card .row .form-group input,
+.card .row .form-group textarea {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  padding: 10px 0 10px 20px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(161, 155, 155, 0.3);
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.card .row .form-group label {
+  line-height: 30px;
+  color: #ffffff;
+  font-size: 22px;
+  margin: 0 0 0 30px;
+  display: block;
+  pointer-events: none;
+}
+
+.row .col:nth-child(6) {
+  margin-top: 64px;
+}
+
+.card .row .form-group input:focus,
+.card .row .form-group textarea:focus {
+  border: 5px solid #ffffff;
+  transition: all 0.5s;
+}
+
+.card .row input[type="submit"] {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 45px;
+  transition: all 0.4s;
+}
+
+.card .row input[type="submit"]:hover {
+  border: 5px solid rgba(255, 255, 255, 1);
+  color: #ffffff;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 900px) {
+  .card .row {
+    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
   }
 
-  /* COMMENT FORM  */
-  .commentsBox {
-    width: 70%;
-    border-radius: 25px;
-    background: #c1c2c7;
-    margin: 20px;
-  }
-  .commentsBox h2 {
-    padding-left: 0;
-    font-family: "Courier New", Courier, monospace;
-    float: inline-end;
-    font-size: 26px;
-    color: rgb(71, 71, 71);
-  }
-  .commentsBox p {
-    font-family: "Courier New", Courier, monospace;
-    margin-left: 40px;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    color: rgb(0, 0, 0);
-  }
-  .comments-form {
-    overflow: hidden;
-    border-radius: 25px;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background:  #6495ED;
-    font-family: "Balsamiq Sans", sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
   .card {
-    
-    width: 70%;
-    padding: 30px 90px 90px 90px;
-    border: 6px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 50px;
-    position: relative;
+    padding: 20px;
   }
-  
+
   .card h2 {
-    color: rgba(0, 0, 0, 0.3);
-    font-size: 25px;
-    text-transform: uppercase;
+    font-size: 34px;
   }
-  
-  .card .row {
-    position: relative;
-    width: 100%;
-    display: grid;
-    grid: auto / auto auto;
-    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-    grid-gap: 20px;
-  }
-  
-  .card .row .col {
-    position: relative;
-    width: 100%;
-    margin: 30px 10px 40px 0;
-    transition: 0.5s;
-  }
-  
-  .card .row .form-group {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    color: #ffffff;
-  }
-  
-  .card .row .form-group input,
-  .card .row .form-group textarea {
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    background: transparent;
-    outline: none;
-    font-size: 24px;
-    padding: 10px 0 10px 20px;
-    border: 5px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 10px 0 rgba(161, 155, 155, 0.3);
-    color: #ffffff;
-    border-radius: 50px;
-  }
-  
-  .card .row .form-group label {
-    line-height: 30px;
-    color: #ffffff;
-    font-size: 22px;
-    margin: 0 0 0 30px;
-    display: block;
-    pointer-events: none;
-  }
-  
-  .row .col:nth-child(6) {
-    margin-top: 64px;
-  }
-  
-  .card .row .form-group input:focus,
-  .card .row .form-group textarea:focus {
-    border: 5px solid #ffffff;
-    transition: all 0.5s;
-  }
-  
+
   .card .row input[type="submit"] {
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    height: 100%;
-    width: 50%;
-    cursor: pointer;
-    outline: none;
-    background: transparent;
-    text-transform: uppercase;
-    color: #ffffff;
-    line-height: 40px;
-    font-size: 24px;
-    font-weight: 700;
-    border-radius: 45px;
-    transition: all 0.4s;
+    width: 100%;
   }
-  
-  .card .row input[type="submit"]:hover {
-    border: 5px solid rgba(255, 255, 255, 1);
-    color: #ffffff;
-    transition: all 0.4s;
-  }
-  
-  @media screen and (max-width: 900px) {
-    .card .row {
-      grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
-    }
-  
-    .card {
-      padding: 20px;
-    }
-  
-    .card h2 {
-      font-size: 34px;
-    }
-  
-    .card .row input[type="submit"] {
-      width: 100%;
-    }
-  }
+}
