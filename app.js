@@ -119,7 +119,7 @@ function onPostComment() {
 
 const navigate = (path) => {
   //Here we change the address and shhow the html with  ROUTER()
-  history.pushState({}, "", path);
+    window.history.replaceState({}, "", "/" + path);
   router(path);
 };
 
