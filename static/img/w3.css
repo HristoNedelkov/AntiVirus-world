@@ -513,7 +513,7 @@ a {
   display: block;
   overflow-x: auto;
 }
- 
+
 .w3-row:after,
 .w3-row:before,
 .w3-row-padding:after,
@@ -523,9 +523,8 @@ a {
   display: table;
   clear: both;
 }
- 
-.w3-third    {
-  float: left;
+
+.w3-third {
   width: 100%;
 }
 .w3-col.s1 {
@@ -873,6 +872,7 @@ a {
 .w3-round-xxlarge {
   border-radius: 32px;
 }
+ 
 .w3-row-padding,
 .w3-row-padding > .w3-half,
 .w3-row-padding > .w3-third,
