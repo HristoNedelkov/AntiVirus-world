@@ -1,0 +1,2 @@
+npm i 
+npms start
