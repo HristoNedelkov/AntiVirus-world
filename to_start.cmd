@@ -1,2 +1,1 @@
-npm i 
-npms start
+npm start

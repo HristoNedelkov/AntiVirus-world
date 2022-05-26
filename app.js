@@ -136,52 +136,7 @@ function deleteOneFunc(e) {
     .then((data) => navigate("home"))
     .catch((e) => postNotification(false, "sth went wrong!"));
 }
-function editOneFunc(e) {
-  e.preventDefault();
-  let id = window.location.href.split("/").pop();
-  navigate("edit");
-  document.getElementById("edit-btn").addEventListener("click", (e) => {
-    e.preventDefault();
-    let formData = new FormData(document.forms["formAdddestination"]);
-
-    let destination = formData.get("destination");
-    let city = formData.get("city");
-    let departureDate = formData.get("departureDate");
-    let duration = formData.get("duration");
-    let imgUrl = formData.get("imgUrl");
-    let owner = localStorage.getItem("auth");
-    owner = JSON.parse(owner).email;
-    let isValid =
-      destination != "" &&
-      city != "" &&
-      departureDate != "" &&
-      duration != "" &&
-      imgUrl != "";
-
-    if (isValid) {
-      itemSurvices
-        .editOne(id, {
-          destination,
-          city,
-          departureDate,
-          duration,
-          imgUrl,
-          owner,
-        })
-        .then((res) => {
-          postNotification(true, `Successfully edited destination.`);
-        })
-        .then(() => {
-          navigate("home");
-        })
-        .catch((e) => {
-          console.log(`${e} ----> GRESHKAAAAAAAAAA`);
-        });
-    } else {
-      postNotification(false, "Please fill all of the iputs!");
-    }
-  });
-}
+ 
 
 function postNotification(type, text) {
   if (type) {
