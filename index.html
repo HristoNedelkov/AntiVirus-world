@@ -8,10 +8,9 @@
 
     <!-- Modules -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> -->
-
-    <script src="survices.js"></script>
+ 
     <script src="router.js" defer></script>
-    <script src="app.js" defer></script>
+     
     <!-- <script src="./db-connection.js" defer></script> -->
     <!-- Scripts -->
   </head>
@@ -34,11 +33,7 @@
             <li>
               <a href="/catalog" onclick="navigateHandler(event)">Каталог</a>
             </li>
-            <li>
-              <a href="/create" onclick="navigateHandler(event)"
-                >Add AntiVirus</a
-              >
-            </li>
+            
             <li>
               <a href="/gallery" onclick="navigateHandler(event)">Галерия</a>
             </li>
@@ -55,9 +50,9 @@
       <div id="content"></div>
     </div>
  
-    <div id="home-template" >
+    <div id="home-template" style="display: none;" >
       
-      <div id="home-page" style="display: none;">
+      <div id="home-page" >
 
         <h1 id="title-home">AntiVirus World </h1>
         <i class="fa-thin fa-camera-cctv"></i>
@@ -73,36 +68,7 @@
 
      
     <div id="about-us-template" style="display: none;">
-       
-
-      <!-- <div class="about-us-page">
-
-        <div class="about-section">
-          <h1>About Us Page</h1>
-          <p>Some text about who we are and what we do.</p>
-          <p>Resize the browser window to see that this page is responsive by the way.</p>
-        </div>
-
-
-        <div class="column">
-          <img src="./static/img/avatar.jpg" alt="John" >
-          <div class="container">
-            <h2>Димитър Дуев</h2>
-                          <p class="title">Икономист-информатик </p>
-                          <p>Завършва: ЗПГ "Климент Тимирязев"</p>
-                          <p>имейл:mitko@abv.bg</p>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                  <section class="comments-form">
-                    <div class="card">
-                      <h1>AntiVirus World</h1>
-                      <p id="about-par">Компютърната сигурност е обширна тема, която придобива все по-голямо значение, тъй като светът става силно взаимосвързан, а мрежите се използват за извършване на важни транзакции. Киберпрестъпността продължава да се отклонява по различни пътища с всяка изминала нова година, както и сигурността на информацията. Най-новите и разрушителни технологии, заедно с новите кибернетични инструменти и заплахи, които излизат наяве всеки ден, поставят организациите пред предизвикателството не само как да защитят инфраструктурата си, но и как да изискват нови платформи и разузнаване за това. Няма перфектно решение за киберпрестъпленията, но трябва да се постараем на ниво да ги сведем до минимум, за да имаме сигурно и безопасно бъдеще в киберпространството.</p>
-                    </div>
-                  </section> -->
+        
     </div>
 
     <div id="contact-template" style="display:none;">
@@ -270,7 +236,7 @@
     </div>
 
     <div id="details-template" style="display: none;">
-      {{>header-template}}
+      
       <section id="viewdestinationDetails">
         <div class="destination-area">
           <div class="destination-area-left">

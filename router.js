@@ -1,34 +1,40 @@
 const routes = {
-  home: "home-template",
-  login: "login-template",
-  register: "register-template",
-  create: "create-template",
-  details: "details-template",
-  edit: "edit-template",
-  catalog: "catalog-template",
-  "about-us": "about-us-template",
-  gallery: "gallery-template",
-  contact: "contact-template",
+  home: document.getElementById("home-template"),
+  catalog: document.getElementById("catalog-template"),
+  "about-us": document.getElementById("about-us-template"),
+  gallery: document.getElementById("gallery-template"),
+  contact: document.getElementById("contact-template"),
 };
 
-const router = async (fullPath) => {
-  let [path, id] = fullPath.split("/");
-  let app = document.getElementById("container"); //Here add the main
-  let temp = document.getElementById(routes[path]).innerHTML;
-  app.innerHTML = temp(templateData);
-};
- 
- 
+function show(...componentsToBeShown) {
+  for (const key in routes) {
+    if (componentsToBeShown.includes(key)) {
+      routes[key].style.display = "block";
+    } else {
+      routes[key].style.display = "none";
+    }
+  }
+}
+
+//const navigation = Array.from(document.querySelector("#navigation").children);
+//const keys = Object.keys(paths);
+
 function navigateHandler(event) {
   //Navigate Handler --------
   event.preventDefault();
   let url = new URL(event.target.href);
-  navigate(url.pathname.slice(1));
+  const path = url.pathname.slice(1);
+  console.log("====================================");
+  console.log(path);
+  console.log("====================================");
+  navigate(path);
+
   //That returns us only the patch word
 }
 
 const navigate = (path) => {
   //Here we change the address and shhow the html with  ROUTER()
   window.history.replaceState({}, "", "/" + path);
-  router(path);
+  //router(path);
+  show(path);
 };
