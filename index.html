@@ -7,112 +7,74 @@
     <link rel="icon" href="./favicon.png" />
 
     <!-- Modules -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> -->
 
     <script src="survices.js"></script>
     <script src="router.js" defer></script>
     <script src="app.js" defer></script>
-    <script src="./db-connection.js" defer></script>
+    <!-- <script src="./db-connection.js" defer></script> -->
     <!-- Scripts -->
   </head>
 
   <body>
     <!-- Notifications -->
-    <div>
-      <div class="notification loadingBox">Loading …</div>
-      <div class="notification infoBox" id="info-notification">Info</div>
-      <div class="notification errorBox" id="error-notification">
-        Error: Добави име на обявата!
-      </div>
-    </div>
-    <div id="container"></div>
-
-    <script type="text/x-handlebars-template" id="header-template">
+    
+    <div id="container">
       <nav>
         <div class="left-container">
           <ul>
-            {{#if isAuth}}
-              <li><img
-                  src="./static/img/logo-white.png"
-                  alt="logo"
-                  style="width: 100%;"
-                /></li>
-              <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
-              <li><a
-                  href="/catalog"
-                  onclick="navigateHandler(event)"
-                >Каталог</a></li>
-              <li><a href="/create" onclick="navigateHandler(event)">Add
-                  AntiVirus</a></li>
-              <li><a
-                  href="/gallery"
-                  onclick="navigateHandler(event)"
-                >Галерия</a></li>
-              <li><a
-                  href="/contact"
-                  onclick="navigateHandler(event)"
-                >Контакти</a></li>
-              <li><a href="/about-us" onclick="navigateHandler(event)">About us</a></li>
-            {{else}}
-              <li><a
-                  href="/login"
-                  onclick="navigateHandler(event)"
-                >Вход</a></li>
-              <li><a
-                  href="/register"
-                  onclick="navigateHandler(event)"
-                >Регистрация</a></li>
-            {{/if}}
+            <li> 
+              <img
+                src="./static/img/logo-white.png"
+                alt="logo"
+                style="width: 100%"
+              />
+            </li>
+            <li><a href="/home" onclick="navigateHandler(event)">Home</a></li>
+            <li>
+              <a href="/catalog" onclick="navigateHandler(event)">Каталог</a>
+            </li>
+            <li>
+              <a href="/create" onclick="navigateHandler(event)"
+                >Add AntiVirus</a
+              >
+            </li>
+            <li>
+              <a href="/gallery" onclick="navigateHandler(event)">Галерия</a>
+            </li>
+            <li>
+              <a href="/contact" onclick="navigateHandler(event)">Контакти</a>
+            </li>
+            <li>
+              <a href="/about-us" onclick="navigateHandler(event)">About us</a>
+            </li>
           </ul>
         </div>
-        <div class="right-container">
-          {{#if isAuth}}
-            <span>Добре дошъл, {{email}} |</span>
-            <a
-              href="/logout"
-              onclick="navigateHandler(event)"
-              class="log-out"
-            >Излез</a>
-          {{/if}}
-        </div>
       </nav>
-    </script>
-    <script type="text/x-handlebars-template" id="home-template">
-      {{> header-template}}
-      <div id="home-page">
-        {{#if isAuth}}
-        <h1 id="title-home">AntiVirus World </h1>
-        <i class="fa-thin fa-camera-cctv"></i>
-
-        <section id="viewCatalog" class="background-img"></section>
-        <div class="intro-text">
-          <p> Днес човек е в състояние да изпраща и получава всякаква форма на данни, може да бъде електронна поща или аудио, или видео само с едно натискане на бутон, но дали някога е мислил колко сигурно се предават или изпращат данните му на друго лице безопасно, без изтичане на информация? Отговорът се крие в киберсигурността. Днес интернет е най-бързо развиващата се инфраструктура в ежедневието. В днешната техническа среда много от най-новите технологии променят облика на човека. Но поради тези нововъзникващи технологии ние не сме в състояние да защитим личната си информация по много ефективен начин и затова в наши дни киберпрестъпленията се увеличават с всеки изминал ден. Днес повече от 60 % от всички търговски сделки се извършват онлайн, така че тази област изисква високо качество на сигурността за прозрачни и най-добри сделки. Затова киберсигурността се превърна в актуален въпрос. Обхватът на киберсигурността не се ограничава само до защита на информацията в ИТ индустрията, но и до различни други области като киберпространството и т.н. </p>
-        </div>
-        {{else}}
-        <img src="./static/img/download.png"  class="guest" alt="">
-        {{/if}}
-      </div>
-      <footer>Dimitur Duev diploma project 2022 </footer>
-    </script>
-
-    <script type="text/x-handlebars-template" id="login-template">
-      {{> header-template}}
-      <section id="viewLogin">
-        <h2>Влезте във вашият акаунт: </h2>
-        <form id="formLogin">
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="Enter your Email">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter your Password">
-          <input type="submit" class="login" value="Login" onclick="onLoginSubmit(event)">
-        </form>
-      </section>
-      <footer>Dimitur Duev diploma project 2022 </footer>
-    </script>
-
-    <script type="text/x-handlebars-template" id="about-us-template">
-      {{>header-template}}
+      <div id="home-template">
       
+        <div id="home-page">
+  
+          <h1 id="title-home">AntiVirus World </h1>
+          <i class="fa-thin fa-camera-cctv"></i>
+  
+          <section id="viewCatalog" class="background-img"></section>
+          <div class="intro-text">
+            <p> Днес човек е в състояние да изпраща и получава всякаква форма на данни, може да бъде електронна поща или аудио, или видео само с едно натискане на бутон, но дали някога е мислил колко сигурно се предават или изпращат данните му на друго лице безопасно, без изтичане на информация? Отговорът се крие в киберсигурността. Днес интернет е най-бързо развиващата се инфраструктура в ежедневието. В днешната техническа среда много от най-новите технологии променят облика на човека. Но поради тези нововъзникващи технологии ние не сме в състояние да защитим личната си информация по много ефективен начин и затова в наши дни киберпрестъпленията се увеличават с всеки изминал ден. Днес повече от 60 % от всички търговски сделки се извършват онлайн, така че тази област изисква високо качество на сигурността за прозрачни и най-добри сделки. Затова киберсигурността се превърна в актуален въпрос. Обхватът на киберсигурността не се ограничава само до защита на информацията в ИТ индустрията, но и до различни други области като киберпространството и т.н. </p>
+          </div>
+  
+        </div>
+        <footer>Dimitur Duev diploma project 2022 </footer>
+      </div>
+      <div id="content"></div>
+    </div>
+ 
+   
+
+     
+    <div id="about-us-template" style="display: none;">
+       
+
       <!-- <div class="about-us-page">
 
         <div class="about-section">
@@ -141,26 +103,9 @@
                       <p id="about-par">Компютърната сигурност е обширна тема, която придобива все по-голямо значение, тъй като светът става силно взаимосвързан, а мрежите се използват за извършване на важни транзакции. Киберпрестъпността продължава да се отклонява по различни пътища с всяка изминала нова година, както и сигурността на информацията. Най-новите и разрушителни технологии, заедно с новите кибернетични инструменти и заплахи, които излизат наяве всеки ден, поставят организациите пред предизвикателството не само как да защитят инфраструктурата си, но и как да изискват нови платформи и разузнаване за това. Няма перфектно решение за киберпрестъпленията, но трябва да се постараем на ниво да ги сведем до минимум, за да имаме сигурно и безопасно бъдеще в киберпространството.</p>
                     </div>
                   </section> -->
-    </script>
+    </div>
 
-    <script type="text/x-handlebars-template" id="register-template">
-      {{> header-template}}
-      <section id="viewRegister">
-        <h2>Създай своя акаунт:</h2>
-        <form id="formRegister">
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="Email">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Password">
-          <label for="rePassword">Repeat Password:</label>
-          <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
-          <input type="submit" class="register" value="Register" onclick="onRegSubmit(event)">
-        </form>
-      </section>
-      <footer>Dimitur Duev diploma project 2022</footer>
-    </script>
-
-    <script type="text/x-handlebars-template" id="contact-template">
+    <div id="contact-template" style="display:none;">
                     {{>header-template}}
       <div class="login-root">
         <div
@@ -296,15 +241,16 @@
         </div>
         <div id="comments-section">
                 <!--  THE PLACE FOR THE COMMENTS -->
-                 
+
 
               </div>
             </div>
           </div>
         </div>
       </div>
-    </script>
-    <script type="text/x-handlebars-template" id="create-template">
+    </div>
+
+    <div id="create-template" style="display: none;">
       {{> header-template}}
       <section id="viewAdddestination">
         <h2>Добави антивирусен софтуер</h2>
@@ -321,9 +267,9 @@
         </form>
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
-    </script>
+    </div>
 
-    <script type="text/x-handlebars-template" id="details-template">
+    <div id="details-template" style="display: none;">
       {{>header-template}}
       <section id="viewdestinationDetails">
         <div class="destination-area">
@@ -339,9 +285,9 @@
         </div>
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
-    </script>
+    </div>
 
-    <script type="text/x-handlebars-template" id="catalog-template">
+    <div id="catalog-template" style="display: none;">
       {{> header-template}}
       <section id="viewMydestinations">
         <h3>Your antivirus softwares</h3>
@@ -351,21 +297,21 @@
 
       </section>
       <footer>Dimitur Duev diploma project 2022 </footer>
-    </script>
+    </div>
 
-    <script type="text/x-handlebars-template" id="destination-template">
+    <div id="destination-template" style="display: none;">
       <a
         href="/details/{{key}}"
         class="added-destination"
         onclick="navigateHandler(event)"
       >
         <img src="{{imgUrl}}" alt="" class="picture-added-destination" />
-        <h3>{{destination}}</h3>
-        <span>to {{city}} </span>
-      </a>
-    </script>
+        <h3>{{ destination }}</h3>
+        <span>to {{ city }} </span>
+      </a>;
+    </div>
 
-    <script type="text/x-handlebars-template" id="gallery-template">
+    <div id="gallery-template" style="display: none;">
         <!-- GALLERY TEMPLATE - TO DOOO! -->
         {{>header-template}}
         <header class="w3-center w3-margin-bottom">
@@ -395,35 +341,38 @@
 
         <!-- End Page Content -->
       </div>
-    </script>
+    </div>
 
-    <script type="text/x-handlebars-template" id="my-dest-template">
+    <div id="my-dest-template" style="display: none;">
       <div class="destination-ticket">
-
         <div class="destination-left">
           <img src="{{imgUrl}}" alt="" />
         </div>
 
         <div class="destination-right">
-
           <div>
-            <h3>{{destination}}</h3>
+            <h3>{{ destination }}</h3>
           </div>
 
-          <div>{{city}}</div>
+          <div>{{ city }}</div>
 
           <a
             href="/delete/{{key}}"
             onclick="deleteOneFunc(event)"
             class="remove"
-          >REMOVE</a>
+          >
+            REMOVE
+          </a>
           <a
             href="/details/{{key}}"
             onclick="navigateHandler(event)"
             class="details"
-          >Details</a>
+          >
+            Details
+          </a>
         </div>
-      </div>
-    </script>
+      </div>;
+    </div>
+
   </body>
 </html>

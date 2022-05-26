@@ -22,31 +22,31 @@ const router = async (fullPath) => {
     path //Here are some functionality
   ) {
     case "gallery":
-      await itemSurvices.getAll().then((res) => {
-        if (Object.keys(res).length != 0) {
-          templateData.destinations = res;
-        }
-      });
-      break;
+      // await itemSurvices.getAll().then((res) => {
+      //   if (Object.keys(res).length != 0) {
+      //     templateData.destinations = res;
+      //   }
+      // });
+      // break;
     case "catalog":
-      await itemSurvices.getAll().then((res) => {
-        if (Object.keys(res).length != 0) {
-          console.log(res);
-          let arr = [];
-          let currOwner = JSON.parse(localStorage.getItem("auth")).email;
+      // await itemSurvices.getAll().then((res) => {
+      //   if (Object.keys(res).length != 0) {
+      //     console.log(res);
+      //     let arr = [];
+      //     let currOwner = JSON.parse(localStorage.getItem("auth")).email;
 
-          res.forEach((dest) => {
-            arr.push(dest);
-          });
-          templateData.destinations = arr;
-        }
-      });
+      //     res.forEach((dest) => {
+      //       arr.push(dest);
+      //     });
+      //     templateData.destinations = arr;
+      //   }
+      // });
 
       break;
     case "logout":
-      authServices.logout();
-      postNotification(false, "You logged out of your account!");
-      return navigate("home");
+      // authServices.logout();
+      // postNotification(false, "You logged out of your account!");
+      // return navigate("home");
 
     case "details":
       let destDetails = await itemSurvices.getOne(id);
